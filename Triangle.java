@@ -1,31 +1,32 @@
 public class Triangle{
-  private Point vertex1;
-  private Point vertex2;
-  private Point vertex3;
+  private Point v1, v2, v3;
 
   public Triangle(Point first, Point second, Point third){
-    vertex1 = new Point(first);
-    vertex2 = new Point(second);
-    vertex3 = new Point(third);
+    v1 = new Point(first);
+    v2 = new Point(second);
+    v3 = new Point(third);
   }
 
   public Triangle(double firstX, double firstY, double secondX, double secondY, double thirdX, double thirdY){
-    vertex1 = new Point(firstX, firstY);
-    vertex2 = new Point(secondX, secondY);
-    vertex3 = new Point(thirdX, thirdY);
+    v1 = new Point(firstX, firstY);
+    v2 = new Point(secondX, secondY);
+    v3 = new Point(thirdX, thirdY);
   }
 
   public String toString(){
-    return "[" + vertex1 + "," + vertex2 + "," + vertex3 + "]";
+    return "[" + v1 + "," + v2 + "," + v3 + "]";
   }
 
   public Point[] getVertices(){
-    return new Point[] {vertex1, vertex2, vertex3};
+    return new Point[] {v1, v2, v3};
   }
-  public double calculatePerimeter(){
-    double SegmentAB = vertex1.distanceTo(vertex2);
-    double SegmentAC = vertex1.distanceTo(vertex3);
-    double SegmentBC = vertex2.distanceTo(vertex3);
+  public Point getVertex(int selected){
+    return this.getvertices()[selected];
+  }
+  public double getPerimeter(){
+    double SegmentAB = v1.distanceTo(v2);
+    double SegmentAC = v1.distanceTo(v3);
+    double SegmentBC = v2.distanceTo(v3);
     return SegmentAB + SegmentAC + SegmentBC;
   }
 }

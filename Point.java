@@ -1,15 +1,14 @@
 public class Point{
-  private double xValue;
-  private double yValue;
+  private double x, y;
 
-  public Point(double x, double y){
-    xValue = x;
-    yValue = y;
+  public Point(double newX, double newY){
+    x = newX;
+    y = newY;
   }
 
   public Point(){
-    xValue = 0;
-    yValue = 0;
+    x = 0;
+    y = 0;
   }
 
   public Point(Point p){
@@ -31,5 +30,8 @@ public class Point{
   public double distanceTo(Point p){
     //return 2.3;
     return Math.sqrt((Math.pow((this.xValue - p.xValue), 2)) + (Math.pow((this.yValue - p.yValue), 2)));
+  }
+  public static double distance(Point a, Point b){
+    return Math.sqrt(Math.pow((a.x-b.x), 2) + Math.pow((a.y - b.y), 2));
   }
 }
