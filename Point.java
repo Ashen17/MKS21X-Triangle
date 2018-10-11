@@ -12,24 +12,24 @@ public class Point{
   }
 
   public Point(Point p){
-    xValue = p.xValue;
-    yValue = p.yValue;
+    x = p.x;
+    y = p.y;
   }
 
   public double getX(){
-    return xValue;
+    return x;
   }
   public double getY(){
-    return yValue;
+    return y;
   }
 
   public String toString(){
-    return "[" + xValue + " , " + yValue + "]";
+    return "[" + x + " , " + y + "]";
   }
 
   public double distanceTo(Point p){
     //return 2.3;
-    return Math.sqrt((Math.pow((this.xValue - p.xValue), 2)) + (Math.pow((this.yValue - p.yValue), 2)));
+    return Math.sqrt((Math.pow((this.x - p.x), 2)) + (Math.pow((this.y - p.y), 2)));
   }
   public static double distance(Point a, Point b){
     return Math.sqrt(Math.pow((a.x-b.x), 2) + Math.pow((a.y - b.y), 2));

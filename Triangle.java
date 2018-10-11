@@ -21,12 +21,17 @@ public class Triangle{
     return new Point[] {v1, v2, v3};
   }
   public Point getVertex(int selected){
-    return this.getvertices()[selected];
+    return this.getVertices()[selected];
   }
   public double getPerimeter(){
     double SegmentAB = v1.distanceTo(v2);
     double SegmentAC = v1.distanceTo(v3);
     double SegmentBC = v2.distanceTo(v3);
     return SegmentAB + SegmentAC + SegmentBC;
+  }
+  public void setVertex(int select, Point p){
+    if (select == 0) v1 = new Point(p.getX(), p.getY());
+    if (select == 1) v2 = new Point(p.getX(), p.getY());
+    if (select == 2) v3 = new Point(p.getX(), p.getY());
   }
 }
